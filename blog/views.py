@@ -3,10 +3,11 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 
 def index(request):
-	return HttpResponse("Hello World")
+	return render(request, 'base.html')
 
 class IndexView(ListView):
-	model = Post
-	template_name = 'base.html'
-	context_object_name = 'post_list'
-	paginate_by = 10
+	pass
+	# model = Post
+	# template_name = 'base.html'
+	# context_object_name = 'post_list'
+	# paginate_by = 10
