@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html>
@@ -6,8 +7,12 @@
 		<title>Royal Blog</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% bootstrap_css %}
 	</head>
 	<body>
 		<h1>Hello World!</h1>
+		
+		<!-- Javascript static files. -->
+		{% bootstrap_javascript jquery='full' %}
 	</body>
 </html>
