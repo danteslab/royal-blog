@@ -37,7 +37,25 @@
 				</div>
 			</nav>
 		</header>
-
+		<div class="Body">
+			<div class="container">
+				<div class="row">
+					<main class="col-sm-12">
+						{% block main %}							
+						{% endblock main %}
+					</main>
+				</div>
+			</div>
+		</div>
+		<footer class="Footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">						
+						<p>&copy; 2018 - Dante Calderón</p>					
+					</div>
+				</div>
+			</div>
+		</footer>
 		<!-- Javascript static files. -->
 		{% bootstrap_javascript jquery='full' %}
 	</body>
