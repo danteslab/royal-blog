@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block main %}
+	{% if error_msg %}
+		<p>{{ error_msg }}</p>
+	{% endif %}
+
+	{% for post in post_list %}
+		<article class="Post post-{{ post.pk }}">
+			<header class="Post__header">
+				<h1 class="Post__title">
+					<a href="">{{ post.title }}</a>
+				</h1>				
+				<div class="Post__info">
+					<span class="Post__info__category">
+						<a href="">{{ post.category_name }}</a>
+					</span>
+					<span class="Post__info__date">
+						<a href="">
+							<time datetime="{{ post.created_time }}">{{ post.created__time }}</time>
+						</a>
+					</span>
+					<span class="Post__comments">
+						<a href="">
+							{{ post.comment_set.count }}
+						</a>
+					</span>
+					<span class="Post__views">
+						{{ post.views }}
+					</span>
+				</div>
+			</header>	
+			<div class="Post__content">
+				<p>{{ post.excerpt }}...</p>
+				<a class="Post__read" href="{{ post.get_absolute_url }}">Read more →</a>
+			</div>		
+		</article>
+	{% endfor %}
+
+{% endblock main %}
