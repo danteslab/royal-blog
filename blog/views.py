@@ -17,12 +17,10 @@ class IndexView(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(IndexView, self).get_context_data(**kwargs)
-
 		paginator = context.get('paginator')
 		page = context.get('page_obj')
 		is_paginated = context.get('is_paginated')
 		pagination_data = self.pagination_data(paginator, page, is_paginated)
-
 		context.update(pagination_data)
 		return context
 
