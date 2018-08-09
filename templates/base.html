@@ -1,12 +1,16 @@
 {% load staticfiles %}
 {% load bootstrap4 %}
+{% load sass_tags %}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Royal Blog</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{% bootstrap_css %}
+		{% bootstrap_css %}		
+		<link href="{% sass_src 'blog/main.scss' %}" rel="stylesheet" />
+
 	</head>
 	<body>
 		<header class="Header">

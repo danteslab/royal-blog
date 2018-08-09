@@ -8,16 +8,16 @@
 	{% for post in post_list %}
 		<article class="Post post-{{ post.pk }}">
 			<header class="Post__header">
-				<h1 class="Post__title">
-					<a href="">{{ post.title }}</a>
-				</h1>				
+				<h3 class="Post__title">
+					<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+				</h3>				
 				<div class="Post__info">
 					<span class="Post__info__category">
 						<a href="">{{ post.category_name }}</a>
 					</span>
 					<span class="Post__info__date">
 						<a href="">
-							<time datetime="{{ post.created_time }}">{{ post.created__time }}</time>
+							<time datetime="{{ post.created_time }}">{{ post.created_time }}</time>
 						</a>
 					</span>
 					<span class="Post__comments">
@@ -25,11 +25,21 @@
 							{{ post.comment_set.count }}
 						</a>
 					</span>
+					<span class="Post__catagory">
+						<a href="">
+							{{ post.category.name }}
+						</a>
+					</span>
+					<span class="Post__author">
+						by {{ post.author }}						
+					</span>
 					<span class="Post__views">
-						{{ post.views }}
+						{{ post.views }}						
 					</span>
 				</div>
 			</header>	
+			<div class="Post__image">
+			</div>
 			<div class="Post__content">
 				<p>{{ post.excerpt }}...</p>
 				<a class="Post__read" href="{{ post.get_absolute_url }}">Read more →</a>
